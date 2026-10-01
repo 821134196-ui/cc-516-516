@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>入口核验 · 云枝农场</title>
+<link rel="icon" href="/img/logo.svg">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <img src="/img/logo.svg" alt="logo">
+  <span class="brand">现场检票 · 入口核验与称重</span>
+  <nav>
+    <a href="/">游客端</a>
+    <a href="/gate" class="active">现场端</a>
+    <a href="/admin">管理端</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="grid cols-2">
+    <!-- 入园核销 -->
+    <section class="card">
+      <h2>🎟 入园核销</h2>
+      <div class="flex">
+        <label style="margin:0;white-space:nowrap">入口</label>
+        <select id="gateSel" style="max-width:140px">
+          <option>主入口</option>
+          <option>东门</option>
+          <option>西门</option>
+        </select>
+      </div>
+      <label class="mt">扫描 / 输入券码（大号）</label>
+      <input id="codeIn" class="big-input" placeholder="PKXXXXXX" autocomplete="off">
+      <div class="flex mt">
+        <button id="btnCheckin" class="gold" style="font-size:1.1rem;padding:12px 28px">核 销 入 园</button>
+        <span class="small muted">一张券仅可核销一次，无法跨入口重复入园</span>
+      </div>
+      <div id="checkinMsg" class="alert hidden"></div>
+
+      <h2 class="mt">🧺 当前在园</h2>
+      <div id="inPark" class="scan-list small"><span class="muted">加载中…</span></div>
+    </section>
+
+    <!-- 称重离园 -->
+    <section class="card">
+      <h2>⚖️ 离园称重结算</h2>
+
+      <div class="map scale-panel" style="min-height:170px">
+        <div id="scaleReading" class="scale-reading">--<span class="unit">g</span></div>
+        <div id="scaleHint" class="scale-hint">电子秤连接中…</div>
+        <div class="mt">
+          <label class="small muted">离园券码</label>
+          <input id="weighCode" class="" style="font-size:1.5rem;text-align:center;letter-spacing:5px;font-family:Consolas,monospace" placeholder="PKXXXXXX">
+        </div>
+        <button id="btnWeigh" class="mt" style="font-size:1.1rem;padding:12px 28px">读取秤重并结算</button>
+        <p class="small muted">重量只能取自电子秤，检票员无权手工修改；秤断连时请等待恢复。</p>
+      </div>
+      <div id="weighMsg" class="alert hidden"></div>
+      <div id="weighResult"></div>
+
+      <h2 class="mt">💰 离园后待补扣</h2>
+      <div id="outstanding" class="small"></div>
+    </section>
+  </div>
+
+  <!-- 模拟设备控制台 -->
+  <section class="card mt">
+    <h2>🔧 模拟设备控制台 <span class="tag">演示用：切换电子秤连接 / 支付网关</span></h2>
+    <div class="flex wrap">
+      <label style="margin:0">模拟秤上重量（克）</label>
+      <input id="simWeight" type="number" value="3200" style="max-width:130px">
+      <button id="simSet" class="ghost small">置数并连上</button>
+      <button id="simOff" class="danger small">断开电子秤</button>
+      <span style="width:30px"></span>
+      <button id="payOff" class="danger small">支付网关下线（触发挂账）</button>
+      <button id="payOn" class="ghost small">支付网关恢复</button>
+    </div>
+    <p class="small muted mt">断网离园 → 超额费用挂账 → 网关恢复后在“待补扣”列表点「补扣款」。</p>
+  </section>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/gate.js"></script>
+</body>
+</html>

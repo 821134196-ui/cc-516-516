@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 260" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef7e6"/>
+      <stop offset="1" stop-color="#dcecd0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="260" fill="url(#sky)"/>
+  <!-- 太阳 -->
+  <circle cx="940" cy="60" r="34" fill="#f3c74d"/>
+  <circle cx="940" cy="60" r="48" fill="#f3c74d" opacity="0.25"/>
+  <!-- 远山 -->
+  <path d="M0 180 L180 90 L320 170 L470 80 L640 175 L800 100 L1080 185 L1080 260 L0 260Z" fill="#bcd8a9"/>
+  <!-- 果园行 -->
+  <g>
+    <!-- 果树 1 -->
+    <rect x="118" y="160" width="10" height="60" rx="4" fill="#6e4e2f"/>
+    <circle cx="123" cy="140" r="46" fill="#4a7c3a"/>
+    <circle cx="95" cy="152" r="30" fill="#5c8f49"/>
+    <circle cx="152" cy="152" r="30" fill="#5c8f49"/>
+    <circle cx="108" cy="128" r="7" fill="#d99e1f"/>
+    <circle cx="140" cy="138" r="7" fill="#d99e1f"/>
+    <circle cx="123" cy="118" r="7" fill="#e8b93c"/>
+    <!-- 果树 2 -->
+    <rect x="328" y="170" width="9" height="52" rx="4" fill="#6e4e2f"/>
+    <circle cx="332" cy="150" r="40" fill="#5c8f49"/>
+    <circle cx="308" cy="160" r="26" fill="#7aa865"/>
+    <circle cx="358" cy="160" r="26" fill="#7aa865"/>
+    <circle cx="320" cy="142" r="6.5" fill="#c94f3d"/>
+    <circle cx="346" cy="148" r="6.5" fill="#c94f3d"/>
+    <!-- 果树 3 -->
+    <rect x="548" y="165" width="9" height="56" rx="4" fill="#6e4e2f"/>
+    <circle cx="552" cy="146" r="42" fill="#4a7c3a"/>
+    <circle cx="526" cy="158" r="27" fill="#5c8f49"/>
+    <circle cx="580" cy="158" r="27" fill="#5c8f49"/>
+    <circle cx="540" cy="134" r="6.5" fill="#8a5a9e"/>
+    <circle cx="566" cy="140" r="6.5" fill="#8a5a9e"/>
+    <circle cx="553" cy="124" r="6.5" fill="#9d6fb0"/>
+    <!-- 果树 4 -->
+    <rect x="760" y="172" width="9" height="50" rx="4" fill="#6e4e2f"/>
+    <circle cx="764" cy="152" r="38" fill="#5c8f49"/>
+    <circle cx="742" cy="162" r="24" fill="#7aa865"/>
+    <circle cx="788" cy="162" r="24" fill="#7aa865"/>
+    <circle cx="756" cy="144" r="6" fill="#e8b93c"/>
+    <circle cx="776" cy="150" r="6" fill="#e8b93c"/>
+  </g>
+  <!-- 采摘篮 -->
+  <g transform="translate(880,180)">
+    <path d="M0 10 L70 10 L62 60 L8 60Z" fill="#b07d44"/>
+    <path d="M-4 10 L74 10 L70 0 L0 0Z" fill="#8f6231"/>
+    <circle cx="16" cy="-2" r="8" fill="#d99e1f"/>
+    <circle cx="34" cy="-6" r="8" fill="#e8b93c"/>
+    <circle cx="52" cy="-2" r="8" fill="#d99e1f"/>
+  </g>
+  <!-- 草地 -->
+  <rect y="214" width="1080" height="46" fill="#cfe3bd"/>
+</svg>

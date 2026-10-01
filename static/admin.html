@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>园区管理 · 云枝农场</title>
+<link rel="icon" href="/img/logo.svg">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <img src="/img/logo.svg" alt="logo">
+  <span class="brand">园区管理 · 分区状态与退改</span>
+  <nav>
+    <a href="/">游客端</a>
+    <a href="/gate">现场端</a>
+    <a href="/admin" class="active">管理端</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="grid cols-3" id="stats"></div>
+
+  <div class="grid cols-2 mt">
+    <!-- 园区图 -->
+    <section class="card">
+      <h2>🗺 园区采摘图 <span class="tag">明确可采 / 停采边界</span></h2>
+      <div class="flex">
+        <label style="margin:0">查看日期</label>
+        <input type="date" id="mapDate" style="max-width:170px">
+      </div>
+      <div class="legend">
+        <span><i style="background:#dcecd0;border:2px solid #4a7c3a"></i>可采区域</span>
+        <span><i style="background:repeating-linear-gradient(45deg,#eceff2 0 4px,#e2e6ea 4px 8px);border:2px solid #9aa4ad"></i>停采区域（禁止入内）</span>
+      </div>
+      <div class="map"><div id="zoneMap" class="map-grid"></div></div>
+    </section>
+
+    <!-- 分区状态控制 -->
+    <section class="card">
+      <h2>🚧 设置当天停采 / 恢复采摘</h2>
+      <div id="adminMsg" class="alert hidden"></div>
+      <label>分区</label><select id="cZone"></select>
+      <label>日期</label><input type="date" id="cDate">
+      <label>状态</label>
+      <select id="cStatus">
+        <option value="closed">停采</option>
+        <option value="open">恢复可采</option>
+      </select>
+      <label>原因</label>
+      <select id="cReasonPreset">
+        <option>雨天路滑</option>
+        <option>果实未熟</option>
+        <option>临时养护停采</option>
+        <option value="">（自定义）</option>
+      </select>
+      <input id="cReason" class="mt" placeholder="自定义原因，可选">
+      <div class="flex mt">
+        <button id="btnSetZoneDay" class="gold">应用到该分区当天</button>
+        <button id="btnRain" class="danger">🌧 全园雨天停园（当天）</button>
+      </div>
+      <p class="small muted mt">停采生效后，该区域当日所有未入园预约自动出现在下方“受影响预约”，可一键退款或改期；已核销游客不受影响。</p>
+    </section>
+  </div>
+
+  <!-- 受影响预约 -->
+  <section class="card mt">
+    <h2>🔁 受停采影响的预约与退改选项 <span class="tag">日期：</span><input type="date" id="affDate" style="max-width:170px;display:inline-block;padding:4px 8px"></h2>
+    <div id="affected"></div>
+  </section>
+
+  <!-- 流水 -->
+  <section class="card mt">
+    <h2>💧 券与支付流水（SQLite）</h2>
+    <div style="overflow-x:auto"><table id="txnTable">
+      <thead><tr><th>时间</th><th>券码</th><th>类型</th><th>金额</th><th>状态</th><th>流水号</th><th>备注</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

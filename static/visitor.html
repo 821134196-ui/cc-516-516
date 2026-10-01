@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>采摘日历 · 云枝农场</title>
+<link rel="icon" href="/img/logo.svg">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <img src="/img/logo.svg" alt="logo">
+  <span class="brand">云枝农场 · 采摘券</span>
+  <nav>
+    <a href="/" class="active">游客端</a>
+    <a href="/gate">现场端</a>
+    <a href="/admin">管理端</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <img src="/img/hero.svg" alt="果园">
+    <div class="cap">金秋入园 · 现采现称</div>
+  </div>
+
+  <div class="grid cols-2">
+    <!-- 采摘日历：优先展示可预约日期与剩余名额 -->
+    <section class="card">
+      <h2>📅 采摘日历 <span class="tag">优先查看可预约日期与剩余名额</span></h2>
+      <div id="calendar" class="cal"></div>
+      <h2 class="mt" style="font-size:.98rem">当日分区名额</h2>
+      <div id="dayZones"><span class="muted small">点击上方日期查看</span></div>
+    </section>
+
+    <!-- 购券 -->
+    <section class="card">
+      <h2>🎫 购买采摘券</h2>
+      <div id="buyMsg" class="alert hidden"></div>
+      <form id="buyForm">
+        <label>选择作物 / 园区券种</label>
+        <select name="type_id" id="fType"></select>
+        <div class="row2">
+          <div><label>可采日期</label><input type="date" name="valid_date" id="fDate"></div>
+          <div><label>预约时段</label><select name="slot" id="fSlot"></select></div>
+        </div>
+        <div class="row2">
+          <div><label>入园人数</label><input type="number" name="persons" value="2" min="1"></div>
+          <div><label>随行儿童（享免费重量）</label><input type="number" name="children" value="0" min="0"></div>
+        </div>
+        <div class="row2">
+          <div><label>姓名</label><input name="holder_name" value="张小果" required></div>
+          <div><label>手机号（查询我的券）</label><input name="holder_phone" value="13800000001" required></div>
+        </div>
+        <p class="small muted mt" id="typeInfo"></p>
+        <button type="submit" class="gold mt">立即购券（模拟支付）</button>
+      </form>
+      <div id="newTicket"></div>
+    </section>
+  </div>
+
+  <!-- 我的券 -->
+  <section class="card mt">
+    <h2>🌾 我的采摘券 <span class="tag">改期 / 转赠 / 查看退改选项</span></h2>
+    <div class="flex">
+      <input id="phoneQuery" value="13800000001" style="max-width:260px" placeholder="输入手机号查询">
+      <button id="btnQuery" class="ghost">查询</button>
+    </div>
+    <div id="myMsg" class="alert hidden"></div>
+    <div id="myTickets" class="grid cols-2 mt"></div>
+  </section>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/visitor.js"></script>
+</body>
+</html>
