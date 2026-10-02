@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="24" fill="#eaf2f8"/>
+  <g fill="#7fa8c9">
+    <ellipse cx="62" cy="70" rx="22" ry="14"/>
+    <ellipse cx="100" cy="62" rx="26" ry="16"/>
+    <ellipse cx="138" cy="72" rx="22" ry="14"/>
+    <ellipse cx="80" cy="86" rx="24" ry="14"/>
+    <ellipse cx="122" cy="88" rx="24" ry="14"/>
+  </g>
+  <g stroke="#5b8bb0" stroke-width="4" stroke-linecap="round">
+    <line x1="70" y1="100" x2="62" y2="122"/>
+    <line x1="100" y1="96" x2="100" y2="126"/>
+    <line x1="130" y1="102" x2="138" y2="122"/>
+  </g>
+  <path d="M40 150 Q100 128 160 150" stroke="#3f7d3a" stroke-width="8" fill="none" opacity=".4"/>
+  <text x="100" y="178" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#4a6d87" font-weight="700">雨天停园</text>
+</svg>

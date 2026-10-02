@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260">
+  <rect width="800" height="260" fill="#e8f2e2"/>
+  <circle cx="700" cy="60" r="34" fill="#f6c945"/>
+  <path d="M0 200 Q200 150 400 190 T800 180 L800 260 L0 260 Z" fill="#3f7d3a" opacity="0.35"/>
+  <path d="M0 225 Q220 180 430 215 T800 210 L800 260 L0 260 Z" fill="#3f7d3a" opacity="0.55"/>
+  <!-- 果树 -->
+  <g>
+    <rect x="150" y="150" width="10" height="42" rx="4" fill="#7a5230"/>
+    <circle cx="155" cy="135" r="42" fill="#3f7d3a"/>
+    <circle cx="130" cy="150" r="26" fill="#4a8f44"/>
+    <circle cx="182" cy="150" r="26" fill="#4a8f44"/>
+    <circle cx="142" cy="120" r="6" fill="#c94f3d"/><circle cx="170" cy="128" r="6" fill="#c94f3d"/>
+    <circle cx="156" cy="146" r="6" fill="#e8a51c"/>
+  </g>
+  <g transform="translate(120,-18) scale(.8)">
+    <rect x="150" y="150" width="10" height="42" rx="4" fill="#7a5230"/>
+    <circle cx="155" cy="135" r="42" fill="#3f7d3a"/>
+    <circle cx="130" cy="150" r="26" fill="#4a8f44"/>
+    <circle cx="182" cy="150" r="26" fill="#4a8f44"/>
+    <circle cx="142" cy="120" r="6" fill="#8aa848"/><circle cx="170" cy="128" r="6" fill="#8aa848"/>
+  </g>
+  <!-- 葡萄藤架 -->
+  <g transform="translate(430,120)">
+    <rect x="0" y="0" width="8" height="72" rx="3" fill="#7a5230"/>
+    <rect x="70" y="0" width="8" height="72" rx="3" fill="#7a5230"/>
+    <path d="M-10 8 Q39 -14 88 8" stroke="#3f7d3a" stroke-width="6" fill="none"/>
+    <circle cx="26" cy="22" r="7" fill="#7a5b9e"/><circle cx="40" cy="24" r="7" fill="#8d6cb0"/>
+    <circle cx="33" cy="36" r="7" fill="#7a5b9e"/><circle cx="52" cy="20" r="7" fill="#7a5b9e"/>
+  </g>
+  <text x="40" y="70" font-family="sans-serif" font-size="40" font-weight="700" fill="#2c5a28">阳光果园 · 采摘券系统</text>
+  <text x="42" y="106" font-family="sans-serif" font-size="18" fill="#3f7d3a">预约 · 核销 · 称重结算 · 雨天退改 · 离园补扣（演示）</text>
+</svg>
